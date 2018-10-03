@@ -23,6 +23,6 @@ Hi, I am Nathan. I work as Infrastructure Engineer doing Windows admin work. I e
 
 Here are some projects I have made that I am proud of.
 
-| [Stranger, Tallman & Lautz Accounting](https://www.stlaccountinggrandjunction.com/) | [SCCM-PackageAutomation](https://github.com/NathanTheGr8/SCCM-PackageAutomation) | [Davis Recipe Book](https://davisrecipebook.herokuapp.com/) |
+| [Stranger, Tallman & Lautz Accounting](https://www.stlaccountinggrandjunction.com/){:.rounded} | [SCCM-PackageAutomation](https://github.com/NathanTheGr8/SCCM-PackageAutomation){:.rounded} | [Davis Recipe Book](https://davisrecipebook.herokuapp.com/){:.rounded} |
 | --- |  --- | --- |
 | ![Stranger, Tallman & Lautz Accounting](/assets/images/portfolio/StrangerTallmanLautz.jpg) | ![SCCM-PackageAutomation](/assets/images/portfolio/SCCM-PackageAutomation.jpg) | ![Davis Recipe Book](/assets/images/portfolio/DavisRecipeBook.jpg) |
