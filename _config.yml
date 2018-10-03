@@ -180,6 +180,7 @@ defaults:
         toc: true
       show_edit_on_github: false
       pageview: true
+      excerpt_separator: <!--more-->
 
 
 ## => Plugins
