@@ -84,7 +84,7 @@ This app was pretty complicated, and I got some help from [jasonadsit](https://g
 
 ### Update-PSADTAppVersion
 
-This Functions
+This Function is given the location of a Deploy-Application.ps1 file, a current version, and a new version. It then searches the file for the first instance of $CurrentVersion and replaces it with $NewVersion. I would like to improve the function by eliminating the need for the $CurrentVersion, but the function works right now.
 
 ```powershell
 function Update-PSADTAppVersion {
@@ -235,4 +235,5 @@ else {
 ```
 
 ## Conclusion
+
 All in all, I had a lot of fun writing this project and hope other people find it useful. Soon I will post part 2 of this detailing the functions in `New-StandardAppPackage`
