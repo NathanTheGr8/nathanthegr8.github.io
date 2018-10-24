@@ -7,7 +7,7 @@ tags: [powershell, scripts]
 
 ![](/assets/images/sccm-package-automation/PowerShell_5.0_icon.png){:.rounded}
 
-Recently I published a project called [SCCM Package Automation](https://github.com/NathanTheGr8/SCCM-PackageAutomation) to my Github. I also posted it to [reddit](https://www.reddit.com/r/PowerShell/comments/9ilpdd/sccm_package_automation/) r/PowerShell and got a decent amount of attention. I thought I would write a more detailed blog post about it now.
+Recently I published a project called [SCCM Package Automation](https://github.com/NathanTheGr8/SCCMPackageAutomation) to my Github. I also posted it to [reddit](https://www.reddit.com/r/PowerShell/comments/9ilpdd/sccm_package_automation/) r/PowerShell and got a decent amount of attention. I thought I would write a more detailed blog post about it now.
 <!--more-->
 
 The purpose of the project is to automate the effort of maintaining SCCM packages for common apps. Here are some of the things it automates or eliminates
