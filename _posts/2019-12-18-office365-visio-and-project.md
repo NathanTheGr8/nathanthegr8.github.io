@@ -1,8 +1,8 @@
 ---
 layout: article
 title:  "Deploying Volume License Apps Along Side Office 365"
-key: post20180325
-tags: [server]
+key: post20191218
+tags: [office,microsoft,sccm]
 ---
 
 ![Office365 Logo](/assets/images/office-365-xml/office-365.jpg){:.rounded}
