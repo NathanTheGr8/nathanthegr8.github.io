@@ -10,6 +10,14 @@ layout: base
 {%- assign _header = __return -%}
 
 {%- include snippets/assign.html
+  target=layout.footer source0=page.footer -%}
+{%- assign _footer = __return -%}
+
+{%- include snippets/assign.html
+  target=layout.lightbox source0=page.lightbox -%}
+{%- assign _lightbox = __return -%}
+
+{%- include snippets/assign.html
   target = site.data.variables.default.page.full_width
   source0=layout.full_width source1=page.full_width -%}
 {%- assign _full_width = __return -%}
@@ -24,18 +32,19 @@ layout: base
 
 {%- if page.sidebar -%}
 <div class="layout--page layout--page--sidebar clearfix js-page-root">
-  <div class="page__actions">
-    <div class="button button--circle button--lg box-shadow-2 sidebar-button js-sidebar-show">
-      <i class="fas fa-bars icon--show"></i>
+  <div class="page__mask d-print-none js-page-mask js-sidebar-hide"></div>
+  <div class="page__viewport">
+    <div class="page__actions d-print-none">
+      <div class="button button--circle button--lg box-shadow-2 sidebar-button js-sidebar-show">
+        <i class="fas fa-bars icon--show"></i>
+      </div>
     </div>
-  </div>
-  <div class="page__mask js-page-mask js-sidebar-hide"></div>
 
-  <div class="grid page__grid page__viewport">
+    <div class="grid page__grid">
 
-    <div class="page__sidebar">
-      {%- include sidebar/toc.html -%}
-    </div>
+      <div class="page__sidebar d-print-none">
+        {%- include sidebar/toc.html -%}
+      </div>
 
 {%- else -%}
 <div class="layout--page js-page-root">
@@ -45,8 +54,11 @@ layout: base
     {%- if _page_mode == 'immersive' -%}
       {%- assign _page_main_class = _page_main_class | append: ' page__main--immersive' -%}
     {%- endif -%}
-    {%- if page.sidebar != true -%}
+    {%- unless page.sidebar -%}
       {%- assign _page_main_class = _page_main_class | append: ' page__viewport' -%}
+    {%- endunless -%}
+    {%- if _footer == false -%}
+      {%- assign _page_main_class = _page_main_class | append: ' hide-footer' -%}
     {%- endif -%}
     {%- if page.aside -%}
       {%- assign _page_main_class = _page_main_class | append: ' has-aside' -%}
@@ -56,9 +68,8 @@ layout: base
     <div class="{{ _page_main_class }} cell cell--auto">
 
       <div class="page__main-inner">
-        <div></div>
       {%- if _header != false -%}
-        <div class="page__header">
+        <div class="page__header d-print-none">
         {%- assign _header_theme = page.header.theme | default: layout.header.theme -%}
         {%- if _header_theme == 'dark'-%}
           {%- include header.html theme='dark' background=page.header.background -%}
@@ -172,7 +183,7 @@ layout: base
         {%- endif -%}
             <div class="grid grid--reverse">
 
-              <div class="col-aside js-col-aside">
+              <div class="col-aside d-print-none js-col-aside">
                 {%- if page.aside -%}
                   <aside class="page__aside js-page-aside">
                     {%- include aside/toc.html -%}
@@ -180,7 +191,8 @@ layout: base
                 {%- endif -%}
               </div>
 
-              <div class="col-main cell--auto">
+              <div class="col-main cell cell--auto">
+                {%- include main/top/custom.html -%}
                 {%- if _page_type == 'article' -%}
                   <article itemscope itemtype="http://schema.org/Article">
                 {%- elsif _page_type == 'webpage' -%}
@@ -198,10 +210,11 @@ layout: base
                 {%- endif -%}
 
                     <div class="js-article-content">{{ content }}</div>
-                    {%- if jekyll.environment != "development" and _comment != false -%}
-                      <section class="page__comments">{%- include comments.html -%}</section>
+                    {%- if _comment != false -%}
+                      <section class="page__comments d-print-none">{%- include comments.html -%}</section>
                     {%- endif -%}
                 </article>
+                {%- include main/bottom/custom.html -%}
               </div>
             </div>
 
@@ -210,41 +223,48 @@ layout: base
         {%- endif -%}
         </div>
 
-        <div class="page__footer">{%- include footer.html -%}</div>
+        {%- if _footer != false -%}
+          <div class="page__footer d-print-none">{%- include footer.html -%}</div>
+        {%- endif -%}
       </div>
     </div> {%- comment -%} end page__main {%- endcomment -%}
 {%- if page.sidebar -%}
-  </div> {%- comment -%} end grid {%- endcomment -%}
+    </div> {%- comment -%} end grid {%- endcomment -%}
+  </div> {%- comment -%} end page__viewport {%- endcomment -%}
+{%- endif -%}
+
+<script>{%- include scripts/lib/modal.js -%}</script>
+{%- if _lightbox == true -%}
+  <div class="modal d-print-none js-page-gallery-modal"><div class="gallery"></div></div>
 {%- endif -%}
 {%- if _header != false -%}
-  <div class="page__search-panel">{%- include search.html -%}</div>
+  <div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal">{%- include search.html -%}</div>
 {%- endif -%}
 </div>
 
 
 <script>
-  {%- include scripts/lib/scroll.js -%}
+  {%- include scripts/lib/scroll-to.js -%}
   {%- include scripts/lib/affix.js -%}
   {%- include scripts/lib/toc.js -%}
+  {%- if _lightbox == true -%}
+    {%- include scripts/lib/gallery.js -%}
+    {%- include scripts/components/lightbox.js -%}
+  {%- endif -%}
   {%- include scripts/page.js -%}
 </script>
 
 {%- if page.sidebar -%}
-<script>
-  {%- include scripts/components/sidebar.js -%}
-</script>
+<script>{%- include scripts/components/sidebar.js -%}</script>
 {%- endif -%}
 
 {%- if page.aside -%}
 <script>
   /* toc must before affix, since affix need to konw toc' height. */
-  {%- if page.aside.toc -%}
-    {%- include scripts/aside/toc.js -%}
-  {%- endif -%}
+  {%- if page.aside.toc -%}{%- include scripts/aside/toc.js -%}{%- endif -%}
   {%- include scripts/aside/affix.js -%}
 </script>
 {%- endif -%}
-
 
 {%- include markdown-enhancements.html -%}
 {%- include pageview.html -%}
