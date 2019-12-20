@@ -44,7 +44,13 @@ Note the PIDKEY field, this is where you can put the Generic KMS key listed or y
 [williestylez](https://github.com/williestylez) pointed out what I had missed. Rereading the article I do see they stressed this point, but I missed it. So now I had my install xml, but I still needed the uninstall xml. Whenever I make an application in sccm I like to create the install and uninstall regardless if I plan to use the uninstall. I find people will ask for programs to be mass removed in a hurry so it always helps to have the work done ahead of time. I struggled with the remove xml but eventually came up with this.
 
 ```xml
-todo
+<Configuration>
+  <Remove OfficeClientEdition="32">
+    <Product ID="ProjectProXVolume">
+      <Language ID="en-us" />
+    </Product>
+  </Remove>
+</Configuration>
 ```
 
-Note the line `<Language ID="MatchOS" />`, for some reason I had to specify the language I was uninstalling. Without that the command `setup.exe /configuration remove.xml` would not remove any office programs. 
+Note the line `<Language ID="en-us" />`, for some reason I had to specify the language I was uninstalling. Without that the command `setup.exe /configuration remove.xml` would not remove any office programs. 
