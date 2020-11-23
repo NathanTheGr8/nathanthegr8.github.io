@@ -47,16 +47,4 @@ Here are some projects I have made that I am proud of.
 
 | [Stranger, Tallman & Lautz Accounting](https://www.stlaccountinggrandjunction.com/){:.rounded} | [SCCM-PackageAutomation](https://github.com/NathanTheGr8/SCCM-PackageAutomation){:.rounded} | [Davis Recipe Book](https://davisrecipebook.herokuapp.com/){:.rounded} |
 | --- |  --- | --- |
-<<<<<<< HEAD
 | ![Stranger, Tallman & Lautz Accounting](/assets/images/portfolio/StrangerTallmanLautz.jpg) | ![SCCM-PackageAutomation](/assets/images/portfolio/SCCM-PackageAutomation.jpg) | ![Davis Recipe Book](/assets/images/portfolio/DavisRecipeBook.jpg) |
-=======
-| ![Ocean](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_ocean.jpg) | ![Chocolate](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_chocolate.jpg) | ![Orange](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_orange.jpg) |
-
-### Highlight Theme
-
-TeXt use [Tomorrow](https://github.com/chriskempson/tomorrow-theme) as the highlight theme.
-
-| `tomorrow` | `tomorrow-night` | `tomorrow-night-eighties` | `tomorrow-night-blue` | `tomorrow-night-bright` |
-| --- |  --- | --- | --- |  --- |
-| ![Tomorrow](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow.png) | ![Tomorrow Night](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night.png) | ![Tomorrow Night Eighties](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-eighties.png) | ![Tomorrow Night Blue](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-blue.png) | ![Tomorrow Night Bright](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-bright.png) |
->>>>>>> upstream/master
