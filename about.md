@@ -26,18 +26,18 @@ titles:
 key: page-about
 ---
 
-![Self Portrait](/assets/images/selfportrait.jpg){:.rounded}
+![Self Portrait](/assets/images/nathan-portia.jpg){:.rounded}
 
-Hi, I am Nathan. I work as Infrastructure Engineer doing Windows admin work. I enjoy coding in PowerShell, working on my home server, and playing video games.
+Hi, I am Nathan. I work as an SCCM consultant. I enjoy coding in PowerShell, working on my home server, long walks with my dog, and playing video games.
 
 ## Languages and Tools I Know
 
 - PowerShell
 - SCCM
 - MDT
+- Power BI
 - ZFS File System
 - Docker
-- Java
 - Bash
 - Sass and CSS
 
