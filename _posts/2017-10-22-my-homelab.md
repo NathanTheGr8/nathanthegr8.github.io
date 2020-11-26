@@ -8,8 +8,9 @@ tags: [homelab, server]
 > Welcome, all. This is my first post about my home lab setup.
 
 <!--more-->
-
+{:refdef: style="text-align: center;"}
 ![Picture of my server](/assets/images/my_homelab/homelab.jpg){:.rounded}
+{: refdef}
 
 ### Introduction
 
@@ -34,7 +35,9 @@ My server runs the Proxmox Hypervisor. I choose a hypervisor because I did want 
 * Easy to use web UI
 * and other reasons
 
+{:refdef: style="text-align: center;"}
 ![zpool status](/assets/images/my_homelab/zfsstats.png){:.rounded}
+{: refdef}
 
 ### The  Storage
 
@@ -52,7 +55,9 @@ I have trusted my data to the battle-tested and mature file system ZFS. I chose 
 
 ZFS’s brillance amazes me every day. It is the most elegant and future proof piece of software I have ever used. The only downside (for my use case) to ZFS is that you have to add disks in vdev groups, you can’t just add one disk at a time. My current zfs pool consists of 18 6TB drives. The drives are split into three vdevs of 6 drives in a raidz2 array. This gives me a lot of resiliency against drive failures. Furthermore, the copy on write nature of the file system allows for “free” snapshots. Snapshots only use storage space when the files are changed or deleted.
 
+{:refdef: style="text-align: center;"}
 ![Portainer Containers](/assets/images/my_homelab/portainerStats.png){:.rounded}
+{: refdef}
 
 ### Docker and VMs
 
@@ -64,7 +69,9 @@ While most my apps run fine in containers, there are a few things I want VMs for
 
 I also have a few random Linux distro VMs I use for random testing.
 
+{:refdef: style="text-align: center;"}
 ![Pfsnese log](/assets/images/my_homelab/pfsenseLogo.png){:.rounded}
+{: refdef}
 
 ### Firewall and Router
 For the longest time, I justed used a consumer access point, switch, router, and firewall combo unit from ASUS. It worked fine for basic port forwarding and a VPN, but I wanted to experiment with intrusion detection systems like snort, so I went searching for a firewall with a more advanced feature set that wouldn’t cost a fortune. I considered used units from Cisco, Sophos, and Ubiquiti but I prefer open source technologies for my homelab. I find the are easier to tinker with, not to mention cheaper. I had heard about Pfsense and experimented with it in VM. I loved it’s easy to use and modern web UI. Plus there is a great comunity around it and a plethora of addon packages. Some of the packages I use are

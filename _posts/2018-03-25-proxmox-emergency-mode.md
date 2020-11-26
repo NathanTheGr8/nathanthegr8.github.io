@@ -5,7 +5,9 @@ key: post20180325
 tags: [server]
 ---
 
+{:refdef: style="text-align: center;"}
 ![Picture of my server](/assets/images/proxmox-emergency-mode/Blue_Screen_of_Death.png){:.rounded}
+{: refdef}
 
 Over the past few weeks, I had noticed errors my zfs storage pool. The errors were no big deal, errors happen. ZFS is fantastic and detects and corrects them automatically. However, it was happening often enough I decided to I needed to look into if one of the HDDs was failing. Sure enough, the errors were coming from a 6TB WD Red that I have had in service about three years now. I ordered a new 6TB drive or replace it with, which arrived Tuesday. I popped the drive into one of my bays and started a zfs resilver operation.
 
@@ -39,7 +41,9 @@ sudo zpool replace storage_pool_name failing_hdd_name new_WDhdd_name
 
 This time the rebuild progressed at much faster speeds. It ranged from 250M/s to 1000M/s. I decided that while I was on my server, I would do some other update maintenance. I updated my packages, checked my backups, and cleaned up my home directory. I decided to reboot the server since I hadn’t in a few weeks. This reboot was what ruined my day. My server normally takes about 6-7 minutes to do a reboot, most of this time is on random splash screens for my HBA (raid cards). After 10 minutes, I still couldn’t ssh into my server. I was beginning to worry, so I launched my IPMI and a remote console viewer. This screen greeted me.
 
+{:refdef: style="text-align: center;"}
 ![Emergency Mode](/assets/images/proxmox-emergency-mode/bootError.png){:.rounded}
+{: refdef}
 
 ### YOU ARE IN EMERGENCY MODE
 
