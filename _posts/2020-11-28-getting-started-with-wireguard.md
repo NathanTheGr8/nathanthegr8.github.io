@@ -8,13 +8,9 @@ tags: [vpn,server,wireguard]
 ![Wireguard Logo](/assets/images/wireguard/wireguard_logo.png){:.rounded}
 {: refdef}
 
-Setting a basic wireguard VPN server.
+Setting a basic wireguard VPN server. See how to configure the server, desktop, and mobile peers.
 
 <!--more-->
-### Goal
-
-To setup a wireguard vpn with multiple gateways so that if one of them is offline the vpn still works. 
-[wireguard IP roaming](https://www.wireguard.com/#built-in-roaming)
 
 ### Server Install
 Instructions are for a fresh Ubuntu 20.04, but should work for most debian based distros.
@@ -210,3 +206,5 @@ qrencode -t ansiutf8 < /etc/wireguard/mobile.conf
 For additional help I would recommend checking out the [Arch Wiki](https://wiki.archlinux.org/index.php/WireGuard). Even if you don't use arch linux, it is a valuable resource. 
 
 Also starting in Android 12 Wireguard may be [native to the 4.19 and 5.4 kernel](https://www.xda-developers.com/google-adds-wireguard-vpn-android-12-linux-kernel-5-4/). 
+
+[wireguard IP roaming](https://www.wireguard.com/#built-in-roaming)
