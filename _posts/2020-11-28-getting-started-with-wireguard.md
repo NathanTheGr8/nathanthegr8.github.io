@@ -201,6 +201,8 @@ qrencode -t ansiutf8 < /etc/wireguard/mobile.conf
 ![Mobile QR Code](/assets/images/wireguard/mobile-QR-code.png){:.rounded}
 {: refdef}
 
+Simply open the mobile wireguard app, hit the + button, and click scan from QR code.
+
 ### Extras
 
 For additional help I would recommend checking out the [Arch Wiki](https://wiki.archlinux.org/index.php/WireGuard). Even if you don't use arch linux, it is a valuable resource. 
