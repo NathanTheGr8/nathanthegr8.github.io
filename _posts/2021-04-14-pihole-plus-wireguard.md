@@ -5,7 +5,7 @@ key: post20210414
 tags: [vpn,server,wireguard,pi,adblocker]
 ---
 {:refdef: style="text-align: center;"}
-![Wireguard plus Pi Hole Logo](/assets/images/wireguard/pi-hole_plus_wireguard.png){:.rounded}
+![Wireguard plus Pi Hole Logo](/assets/images/pi-hole/pi-hole_plus_wireguard.png){:.rounded}
 {: refdef}
 
 Combining a Pi-hole DNS adblocker with a wireguard vpn to get ad blocking on any device!
