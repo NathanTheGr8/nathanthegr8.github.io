@@ -5,7 +5,7 @@ key: post20210414
 tags: [vpn,server,wireguard,pi,adblocker]
 ---
 {:refdef: style="text-align: center;"}
-![Wireguard Logo](/assets/images/wireguard/wireguard_logo.png){:.rounded}
+![Wireguard plus Pi Hole Logo](/assets/images/wireguard/pi-hole_plus_wireguard.png){:.rounded}
 {: refdef}
 
 Combining a Pi-hole DNS adblocker with a wireguard vpn to get ad blocking on any device!
@@ -157,13 +157,13 @@ DNS = 192.168.100.1
 Simply do that for all clients you want to block adds on. Then you can log in to Pi-hole at http://PI-holeIP/admin, mine is at http://192.168.100.1/admin.
 
 {:refdef: style="text-align: center;"}
-![Wireguard Logo](/assets/images/pi-hole/pi-hole_login.png){:.rounded}
+![Pi-hole login](/assets/images/pi-hole/pi-hole_login.png){:.rounded}
 {: refdef}
 
 Once logged in you can begin to see the blocking in action. There are many extras you can do at this point to configure Pi-hole, one I like is to add a local DNS name for the Pi-hole server.
 
 {:refdef: style="text-align: center;"}
-![Wireguard Logo](/assets/images/pi-hole/pi-hole_dns.png){:.rounded}
+![Pi-hole DNS](/assets/images/pi-hole/pi-hole_dns.png){:.rounded}
 {: refdef}
 
 ### Extras
