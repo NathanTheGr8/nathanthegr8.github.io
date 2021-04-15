@@ -86,9 +86,10 @@ sudo systemctl restart systemd-resolved
 See [Pi-Hole's documentation](https://github.com/pi-hole/docker-pi-hole/#installing-on-ubuntu) for more detailed steps and explainations.
 
 ### Configure Firewall
-If you plan on having Pi-hole on an internet accessable server, configuring your firewall will be usefull. I use UFW but plain iptables would work.
+If you plan on having Pi-hole on an internet accessable server, configuring your firewall will be usefull. I use tend to use UFW, but the Pi-hole project provides documentation on how to [make plain iptable rules](https://docs.pi-hole.net/guides/vpn/openvpn/firewall/).
 
 1. Display your current settings
+
         ```shell
         sudo ufw status
         Status: active
@@ -102,10 +103,19 @@ If you plan on having Pi-hole on an internet accessable server, configuring your
         51820/udp (v6)             ALLOW       Anywhere (v6)
         ```
 2. Add rules to allow access to Pi-hole from your wireguard subnet. Note you need to change `192.168.100.0/24` to your wireguard subnet.
+
         ```shell
         sudo ufw allow from 192.168.100.0/24 to any port 80
         sudo ufw allow from 192.168.100.0/24 to any port 53
         sudo ufw reject https #Port 443 is to provide a sinkhole for ads that use SSL
+        ```
+3. Restrict Access to Docker Network
+        Since I will be installing pihole using docker on a public host, I need to restrict access to the netwrok interface docker automatically creates. Without doing this by default docker creates an iptable rule opening the port of for any port forwarded to a container. In my case this would open port 53 and 80 to the internet. Opening port 53 would be particuarlly bad because you could become part of a DDoS botnet. Docker is making iptable rules that will [bypass/override anything configured in UFW](https://github.com/docker/for-linux/issues/690). It is not possible to overirde these rules in UFW, so instead I have to make an iptable rule and add it to the docker-user iptable chain.
+        
+        Creating the following [IPtable rule](https://docs.docker.com/network/iptables/) will fix this issue by rejecting all connections to the docker interface not originating from the the wireguard 192.168.100.0/24 subnet.
+
+        ```shell
+        iptables -I DOCKER-USER -i ext_if ! -s 192.168.100.0/24 -j DROP
         ```
 
 ### Install Pi-hole
