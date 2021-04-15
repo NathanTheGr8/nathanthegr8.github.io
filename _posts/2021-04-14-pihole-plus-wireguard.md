@@ -109,7 +109,7 @@ If you plan on having Pi-hole on an internet accessable server, configuring your
         ```
 
 ### Install Pi-hole
-Now that docker is installed we need to decide how we configure our Pi-hole install. The project provides an excellent [docker-compose templete](https://github.com/pi-hole/docker-pi-hole/#quick-start), it is listed below.
+Now that docker is installed we need to decide how we configure our Pi-hole install. The project provides an excellent [docker-compose template](https://github.com/pi-hole/docker-pi-hole/#quick-start), it is listed below.
 
 ```yaml
 version: "3"
@@ -168,5 +168,4 @@ Once logged in you can begin to see the blocking in action. There are many extra
 
 ### Extras
 
-[Pi-hole website](https://pi-hole.net/)
-[How Pi-hole works](https://discourse.pi-hole.net/t/how-does-pi-hole-work/3141)
+[Pi-hole website](https://pi-hole.net/), [How Pi-hole works](https://discourse.pi-hole.net/t/how-does-pi-hole-work/3141)
