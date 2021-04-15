@@ -30,6 +30,8 @@ The code isn't perfect, but it is presentable and relatively clean. I welcome fe
 
 ## The Functions
 
+The code has been refactored into a powershell module
+
 ### Get-LatestAppVersion
 
 This function gets the latest version of a given app. The version is returned usually as a [version] object, but sometimes as a string like for Adobe Reader. Reader's version is returned as a string because its version number contains leading 0s that would have been stripped out by the version type.
