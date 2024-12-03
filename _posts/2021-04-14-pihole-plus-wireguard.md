@@ -13,7 +13,7 @@ Combining a Pi-hole DNS adblocker with a wireguard vpn to get ad blocking on any
 <!--more-->
 
 ### Intro
-Instructions are for Ubuntu 20.04, but should be similar for other debian distros. I also assume you already have a working wireguard vpn, if not see my [other blog](https://nathandavis.io/2020/11/28/getting-started-with-wireguard.html) article. You can install Pi-hole "on bare metal" or in a container or vm. I typically choose to install all of my applications as containersfor a few reasons.
+Instructions are for Ubuntu 20.04, but should be similar for other debian distros. I also assume you already have a working wireguard vpn, if not see my [other blog](https://nathandavis.io/2020/11/28/getting-started-with-wireguard.html) article. You can install Pi-hole "on bare metal" or in a container or vm. I typically choose to install all of my applications as containers for a few reasons.
 
 1. Reproducable
   - A container has its own dependacy tree that can't conflict with any other programs, so updating your sever is unliky to affect the applications you are running.
