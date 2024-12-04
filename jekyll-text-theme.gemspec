@@ -24,5 +24,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "csv", "~> 3.2.7"
 
   spec.add_development_dependency "bundler"
+  spec.add_development_dependency "tzinfo-data"
   spec.add_development_dependency "rake", "~> 10.0"
 end
