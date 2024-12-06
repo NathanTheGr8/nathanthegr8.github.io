@@ -46,7 +46,7 @@ In the image, I have highlighted a path attribute, but you can also look at the 
 2. Version
 
     ```/beta```
-    At the time of writing, MS graph only has v1.0 and beta. Beta api's can have breaking changes made to them and should be avoided. They may cause your app/script to suddenly break one day, but you may need to use them for some features. 
+    At the time of writing, MS graph only has v1.0 and beta. Beta api's can have breaking changes made to them with little or no notice but are often needed for some new features. They may cause your app/script to suddenly break one day, so integrate them into an app/workflow at your own risk. 
 
 3. Resource
 
